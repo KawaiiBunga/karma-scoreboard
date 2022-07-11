@@ -1,8 +1,8 @@
 # karma-scoreboard
-Scoreboard designed for Karma DarkRP
+Scoreboard designed for Karma DarkRP and built for simple setup and customization
 
 
-Easily Customizable and simple to setup
+Easily Customizable and simple to setup, with lots of customization options
 
 A constant WIP to add new features
 
