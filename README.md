@@ -6,8 +6,15 @@ Easily Customizable and simple to setup, with lots of customization options
 
 A constant WIP to add new features
 
+Features:
+
+- Shows Title Name, Kills, Deaths, Rank, and Ping
+- Every one of those rows are customizeable, including if they are enabled or not, color, and what they say (All done in configuration.lua)
+
+
 Things I want to do with this in the future - 
 
+- Show Money/Props
 - Mute Button
 - Catergorization for jobs
 - Maybe admin buttons??? (Not sure)
