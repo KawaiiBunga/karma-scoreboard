@@ -42,6 +42,10 @@ local function ToggleScoreboard(toggle)
 				draw.DrawText(	Configuration.JobText,    "karma_20", w / 2, h * .12, Configuration.JobColor, TEXT_ALIGN_CENTER)
 			end
 
+			if Configuration.MoneyOn then
+				draw.DrawText(Configuration.MoneyText,     "karma_20", w / 1.6, h * .12, Configuration.MoneyColor, TEXT_ALIGN_CENTER)
+			end
+
 			if Configuration.KillsText then
 				draw.DrawText(  Configuration.KillsText,   "karma_20", w / 1.4, h * .12, Configuration.KillColor, TEXT_ALIGN_CENTER)
 			end
@@ -60,7 +64,7 @@ local function ToggleScoreboard(toggle)
 
 			if Configuration.ShowOnlineCount then
 				local Pcount = table.Count( player.GetAll() )
-				draw.DrawText(  Configuration.CurrentPlayersText .. " " .. Pcount, "karma_20", w / 2, h - 114, Configuration.OnlineColor, TEXT_ALIGN_CENTER)
+				draw.DrawText(  Configuration.CurrentPlayersText .. " " .. Pcount, "karma_20", w / 2, h - 50, Configuration.OnlineColor, TEXT_ALIGN_CENTER)
 			end
 		end 
 
@@ -82,6 +86,7 @@ local function ToggleScoreboard(toggle)
 			local CommandBase = vgui.Create("Panel", SubMenu)
 			local name = v:Name()
 			local job = v:getDarkRPVar("job")
+			local money = v:getDarkRPVar("money")
 			local ping = v:Ping()
 			local kills = v:Frags()
 			local deaths = v:Deaths()
@@ -111,6 +116,10 @@ local function ToggleScoreboard(toggle)
 						end
 					end
 					
+					if Configuration.MoneyOn then
+						draw.DrawText(DarkRP.formatMoney(money), "karma_20", w / 1.6, h /4, Configuration.MoneyColor, TEXT_ALIGN_CENTER)
+					end
+
 					if Configuration.KillsOn then
 						draw.DrawText(kills, "karma_20", w / 1.4, h /4, Configuration.KillColor, TEXT_ALIGN_CENTER)
 					end
