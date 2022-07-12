@@ -26,7 +26,7 @@ Configuration.DarkRP                = true  -- Enable if using DarkRP, disable i
 ------------------
 -- Title Config --
 ------------------
-Configuration.ServerTitle           = GetHost() -- Changes the head title
+Configuration.ServerTitle           = GetHostName() -- Changes the head title
 Configuration.ServerTitleColor      = White -- Changes the color of the title
 
 ---------------------
@@ -41,33 +41,40 @@ Configuration.NameColor             = White -- Changes "Name" row text Color
 --------------------
 Configuration.JobText               = "Job" -- Changes "Job" text
 Configuration.JobColors             = true -- Changes if DarkRP jobs are colored or not (The same as set in your darkrpmodification/lua/darkrp_customthings/job.lua file)
-Configuration.JobColorElse          = White -- If above is set to false, what color do you want the jobs text row to be?
+Configuration.JobColorElse          = White -- If above is set to false, what color do you want the jobs row text to be?
+
+----------------------
+-- Money Row Config --
+----------------------
+Configuration.MoneyText             = "Money" -- Changes "Job" text
+Configuration.MoneyOn               = true -- Shows Money (true) or not (false)
+Configuration.MoneyColor            = White -- Changes "Money" row text color
 
 ----------------------
 -- Kills Row Config --
 ----------------------
 Configuration.KillsText             = "K" -- Changed "Kills" text
 Configuration.KillsOn               = true -- Show Kills (true) or not (false)
-Configuration.KillColor             = White -- Changes "Kills" text row color
+Configuration.KillColor             = White -- Changes "Kills" row text color
 -----------------------
 -- Deaths Row Config --
 -----------------------
 Configuration.DeathsText            = "D" -- Changes "Deaths" text
 Configuration.DeathsOn              = true -- Show deaths (true) or not (false)
-Configuration.DeathColor            = White -- Changes "Deaths" text row color
+Configuration.DeathColor            = White -- Changes "Deaths" row text color
 ---------------------
 -- Rank Row Config --
 ---------------------
 Configuration.RankText              = "Rank" -- Changes "Rank" text
 Configuration.RankOn                = true -- Show ranks (true) or not (false)
-Configuration.RankColor             = White -- Changes "Rank" text row color
+Configuration.RankColor             = White -- Changes "Rank" row text color
 
 ---------------------
 -- Ping Row Config --
 ---------------------
 Configuration.PingText              = "Ping" -- Changes "Ping" - text
 Configuration.PingOn                = true -- Show ping (true) or not (false)
-Configuration.PingColor             = White -- Changes "Ping" text row color
+Configuration.PingColor             = White -- Changes "Ping" row text color
 
 --------------------------------
 -- Show Online Players Config --
