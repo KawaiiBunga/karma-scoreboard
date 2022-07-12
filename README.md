@@ -21,4 +21,4 @@ Things I want to do with this in the future -
 - Make it look just a little nicer
 
 
-![image](https://user-images.githubusercontent.com/107073565/178431871-da27ab88-1b35-4bc9-8a4d-5f77283c7bca.png)
+![image](https://user-images.githubusercontent.com/107073565/178433711-e9ec6cb6-62a3-42bf-90c8-0e2ec2a1b065.png)
