@@ -14,11 +14,11 @@ Features:
 
 Things I want to do with this in the future - 
 
-- Show Money/Props
+- Show Props
 - Mute Button
 - Catergorization for jobs
 - Maybe admin buttons??? (Not sure)
 - Make it look just a little nicer
 
 
-![image](https://user-images.githubusercontent.com/107073565/178240048-092763ad-8c4d-4181-b8e5-32f2021edf00.png)
+![image](https://user-images.githubusercontent.com/107073565/178431871-da27ab88-1b35-4bc9-8a4d-5f77283c7bca.png)
