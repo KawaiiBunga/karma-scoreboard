@@ -8,14 +8,13 @@ A constant WIP to add new features
 
 Features:
 
-- Shows Title Name, Kills, Deaths, Rank, and Ping
+- Shows Title, Name, Props, Kills, Deaths, Rank, and Ping
+- Mute Button
 - Every one of those rows are customizeable, including if they are enabled or not, color, and what they say (All done in configuration.lua)
 
 
 Things I want to do with this in the future - 
 
-- Show Props
-- Mute Button
 - Catergorization for jobs
 - Maybe admin buttons??? (Not sure)
 - Make it look just a little nicer
