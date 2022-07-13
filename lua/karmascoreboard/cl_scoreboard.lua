@@ -19,7 +19,7 @@ local White = Color( 255,255,255 )
 local Grey = Color( 39,40,41,200 )
 local MutedCol = Color( 255,190,0 )
 self = KarmaScoreboard
-local MuteIcon = Material( "materials/roguescoreboard/mute.png" )
+local MuteIcon = Material( "materials/scoreboard/mute.png" )
 
 local function ToggleScoreboard(toggle)
 	if toggle then 
