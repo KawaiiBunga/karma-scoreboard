@@ -12,9 +12,12 @@ end)
 
 surface.CreateFont( "KarmaTitle", { font = "Roboto", size = 36, weight = 750,} )
 surface.CreateFont( "karma_20", {font = "Roboto", size = 20, weight = 500,} )
+surface.CreateFont( "karma_10", {font = "Roboto", size = 10, weight = 250,} )
 
+local Zero = Color( 0,0,0,0 )
 local White = Color( 255,255,255 )
-local Black = Color( 0,0,0 )
+local Grey = Color( 39,40,41,200 )
+local MutedCol = Color( 255,190,0 )
 self = KarmaScoreboard
 local MuteIcon = Material( "materials/roguescoreboard/mute.png" )
 
@@ -36,6 +39,10 @@ local function ToggleScoreboard(toggle)
 
 			if Configuration.NameOn then
 				draw.DrawText(	Configuration.NameText,   "karma_20", w / 12, h * .12, Configuration.NameColor, TEXT_ALIGN_CENTER)
+			end
+
+			if Configuration.PropsOn then
+				draw.DrawText(	Configuration.PropsText,   "karma_20", w / 4, h * .12, Configuration.PropsColor, TEXT_ALIGN_CENTER)
 			end
 
 			if Configuration.DarkRP then
@@ -79,6 +86,12 @@ local function ToggleScoreboard(toggle)
 			ScrollMain.VBar.btnDown.Paint = ScrollMain.VBar.Paint
 			ScrollMain.VBar.btnGrip.Paint = function(self, w, h) 
 		end
+		
+		local CommandList = vgui.Create("DPanelList", CommandBase)
+			CommandList:EnableVerticalScrollbar( true )
+			ScrollMain:Center()
+			ScrollMain:SetPos( 0, KarmaScoreboard:GetTall() * .15 )
+			ScrollMain:SetSize( KarmaScoreboard:GetWide(), KarmaScoreboard:GetTall() * .71 )
 
 		local ypos = 0
 		for k, v in pairs(player.GetAll()) do
@@ -91,8 +104,10 @@ local function ToggleScoreboard(toggle)
 			local kills = v:Frags()
 			local deaths = v:Deaths()
 			local rank = v:GetUserGroup()
+			local props = v:GetCount( "props" )
 			local TeamColor = team.GetColor(v:Team())
 			local PlayerMute = vgui.Create("DImageButton",PlayerBar)
+
 
 			playerPanel:SetPos(0, ypos)
 			playerPanel:SetSize(KarmaScoreboard:GetWide(), KarmaScoreboard:GetTall() * .05)
@@ -106,6 +121,10 @@ local function ToggleScoreboard(toggle)
 
 					if Configuration.NameOn then
 						draw.DrawText(name, "karma_20", w /12, h /4, Configuration.NameColor, TEXT_ALIGN_CENTER)
+					end
+
+					if Configuration.PropsOn then
+						draw.DrawText(props .. " " .. Configuration.PropsText, "karma_20", w /4, h /4, Configuration.PropsColor, TEXT_ALIGN_CENTER)
 					end
 
 					if Configuration.DarkRP then
@@ -134,24 +153,41 @@ local function ToggleScoreboard(toggle)
 
 					if Configuration.PingOn then
 						draw.DrawText(ping, "karma_20", w /1.1, h /4, Configuration.PingColor, TEXT_ALIGN_CENTER)
-					end
-				
-
+					end	
 					
+					draw.DrawText( v:IsMuted() and Configuration.UnMutedText or Configuration.MutedText, "karma_10", w /22, h /4, self.Color, TEXT_ALIGN_CENTER)
 				end
 			end
 
+			local MuteButton = vgui.Create("DButton", playerPanel)
+            MuteButton:SetSize( 24, 24)
+            MuteButton:SetPos( playerPanel:GetWide() / 60, playerPanel:GetTall() / 5)
+            MuteButton:SetText("")
+            MuteButton:SetFont("karma_20")
+            MuteButton.Color = color_white
+            MuteButton.NextColor = Color(255,0,0)
+			
+            MuteButton.Paint = function(me, w, h )
+                if !IsValid(v) then return end
+                
+				self.NextColor = (self.Hovered or ply:IsMuted()) and MutedCol or Grey
+                
+                surface.SetDrawColor(color_white)
+                surface.SetMaterial(MuteIcon)
+                surface.DrawTexturedRect( 0, 0, w, h )
+				
+            end
+			
+            MuteButton.DoClick = function(me) 
+                v:SetMuted(!v:IsMuted()) 
+            end 
+			
 			ypos = ypos + playerPanel:GetTall() * 1
-
-			local CommandList = vgui.Create("DPanelList", CommandBase)
-			CommandList:EnableVerticalScrollbar( true )
-			ScrollMain:Center()
-			ScrollMain:SetPos( 0, KarmaScoreboard:GetTall() * .15 )
-			ScrollMain:SetSize( KarmaScoreboard:GetWide(), KarmaScoreboard:GetTall() * .71 )
+			
 		end
 	else
 		if IsValid(KarmaScoreboard) then	
-			KarmaScoreboard:Remove()
+			KarmaScoreboard:Remove()	
 		end
 	end
 end
