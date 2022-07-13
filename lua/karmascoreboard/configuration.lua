@@ -36,6 +36,13 @@ Configuration.NameText              = "Name" -- Changes "Name" text
 Configuration.NameOn                = true -- Turns on showing "Name" or not
 Configuration.NameColor             = White -- Changes "Name" row text Color
 
+----------------------
+-- Props Row Config --
+----------------------
+Configuration.PropsText             = "Props" -- Changes "Name" text
+Configuration.PropsOn               = true -- Turns on showing "Name" or not
+Configuration.PropsColor            = White -- Changes "Name" row text Color
+
 --------------------
 -- Job Row Config --
 --------------------
@@ -82,3 +89,9 @@ Configuration.PingColor             = White -- Changes "Ping" row text color
 Configuration.CurrentPlayersText    = "Current Players:" -- Changes "Current Players" text
 Configuration.ShowOnlineCount       = true -- Shows online players at the bottom of the scoreboard
 Configuration.OnlineColor           = White -- Changes "Online Count" text color
+
+------------------------
+-- Mute Button Config --
+------------------------
+Configuration.MutedText             = "Muted"
+Configuration.UnMutedText           = "Un-Muted"
