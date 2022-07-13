@@ -20,4 +20,4 @@ Things I want to do with this in the future -
 - Make it look just a little nicer
 
 
-![image](https://user-images.githubusercontent.com/107073565/178433711-e9ec6cb6-62a3-42bf-90c8-0e2ec2a1b065.png)
+![image](https://user-images.githubusercontent.com/107073565/178763252-7bcb1706-01e1-4bb2-9f0a-0399c771a7c9.png)
