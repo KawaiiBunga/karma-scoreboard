@@ -26,7 +26,7 @@ Configuration.DarkRP                = true  -- Enable if using DarkRP, disable i
 ------------------
 -- Title Config --
 ------------------
-Configuration.ServerTitle           = "Karma DarkRP" -- Changes the head title
+Configuration.ServerTitle           = "Karma Classic DarkRP" -- Changes the head title
 Configuration.ServerTitleColor      = White -- Changes the color of the title
 
 ---------------------

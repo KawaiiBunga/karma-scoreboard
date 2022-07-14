@@ -11,6 +11,7 @@ hook.Add("InitPostEntity", "InitFadminRemove", function() -- Remove defaults
 end) 
 
 surface.CreateFont( "KarmaTitle", { font = "Roboto", size = 36, weight = 750,} )
+surface.CreateFont( "karma_35", {font = "Roboto", size = 35, weight = 500,} )
 surface.CreateFont( "karma_20", {font = "Roboto", size = 20, weight = 500,} )
 surface.CreateFont( "karma_10", {font = "Roboto", size = 10, weight = 250,} )
 
@@ -135,7 +136,7 @@ local function ToggleScoreboard(toggle)
 						end
 					end
 					
-					if Configuration.MoneyOn then
+					if Configuration.MoneyOn and Configuration.DarkRP then
 						draw.DrawText(DarkRP.formatMoney(money), "karma_20", w / 1.6, h /4, Configuration.MoneyColor, TEXT_ALIGN_CENTER)
 					end
 
@@ -155,7 +156,7 @@ local function ToggleScoreboard(toggle)
 						draw.DrawText(ping, "karma_20", w /1.1, h /4, Configuration.PingColor, TEXT_ALIGN_CENTER)
 					end	
 					
-					draw.DrawText( v:IsMuted() and Configuration.UnMutedText or Configuration.MutedText, "karma_10", w /22, h /4, self.Color, TEXT_ALIGN_CENTER)
+					draw.DrawText( v:IsMuted() and "/" or "", "karma_35", w /42, h /34, self.Color, TEXT_ALIGN_CENTER)
 				end
 			end
 
