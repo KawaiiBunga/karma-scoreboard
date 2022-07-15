@@ -156,13 +156,13 @@ local function ToggleScoreboard(toggle)
 						draw.DrawText(ping, "karma_20", w /1.1, h /4, Configuration.PingColor, TEXT_ALIGN_CENTER)
 					end	
 					
-					draw.DrawText( v:IsMuted() and "/" or "", "karma_35", w /42, h /34, self.Color, TEXT_ALIGN_CENTER)
+					draw.DrawText( v:IsMuted() and "/" or "", "karma_35", w /44, h /8, self.Color, TEXT_ALIGN_CENTER)
 				end
 			end
 
 			local MuteButton = vgui.Create("DButton", playerPanel)
             MuteButton:SetSize( 24, 24)
-            MuteButton:SetPos( playerPanel:GetWide() / 60, playerPanel:GetTall() / 5)
+            MuteButton:SetPos( playerPanel:GetWide() / 60, playerPanel:GetTall() / 4)
             MuteButton:SetText("")
             MuteButton:SetFont("karma_20")
             MuteButton.Color = color_white
