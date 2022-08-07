@@ -18,9 +18,11 @@ surface.CreateFont( "karma_10", {font = "Roboto", size = 10, weight = 250,} )
 local Zero = Color( 0,0,0,0 )
 local White = Color( 255,255,255 )
 local Grey = Color( 39,40,41,200 )
+local Red = Color( 255,0,0,200 )
 local MutedCol = Color( 255,190,0 )
 self = KarmaScoreboard
 local MuteIcon = Material( "materials/scoreboard/mute.png" )
+
 
 local function ToggleScoreboard(toggle)
 	if toggle then 
@@ -160,6 +162,8 @@ local function ToggleScoreboard(toggle)
 				end
 			end
 
+			ypos = ypos + playerPanel:GetTall() * 1
+
 			local MuteButton = vgui.Create("DButton", playerPanel)
             MuteButton:SetSize( 24, 24)
             MuteButton:SetPos( playerPanel:GetWide() / 60, playerPanel:GetTall() / 4)
@@ -171,6 +175,12 @@ local function ToggleScoreboard(toggle)
             MuteButton.Paint = function(me, w, h )
                 if !IsValid(v) then return end
                 
+				if MuteButton:IsHovered() or ply:IsMuted() then
+					self.NextColor = Red
+				else
+					self.NextColor = Grey
+				end
+
 				self.NextColor = (self.Hovered or ply:IsMuted()) and MutedCol or Grey
                 
                 surface.SetDrawColor(color_white)
@@ -183,8 +193,7 @@ local function ToggleScoreboard(toggle)
                 v:SetMuted(!v:IsMuted()) 
             end 
 			
-			ypos = ypos + playerPanel:GetTall() * 1
-			
+
 		end
 	else
 		if IsValid(KarmaScoreboard) then	

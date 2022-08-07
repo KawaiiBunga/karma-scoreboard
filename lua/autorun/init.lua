@@ -21,5 +21,6 @@ end
 KarmaScoreboard.LoadingSH("KarmaScoreboard/configuration.lua")
 KarmaScoreboard.LoadingCL("KarmaScoreboard/cl_scoreboard.lua")
 
-if SERVER then 
+
+if SERVER then
 end
